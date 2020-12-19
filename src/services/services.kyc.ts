@@ -1,5 +1,4 @@
-import HttpStatus from 'http-status-codes';
-import ApiResponse from '../handlers/handles.api.responses';
+import { logger } from '../config/logger';
 import { post } from '../utils/utils.axios.instance';
 
 
@@ -8,17 +7,14 @@ class KycService {
   constructor() {
   }
 
-  async initiateKycCheck(body: object) {
-    try {
-        const result = await post(body);
-        const response = this.resolveKycChecks(result.data);
-        return response;
-    } catch (error) {
-        return ApiResponse.error(error, 'Error Performing Operation', HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+  public async initiateKycCheck(body: object) {
+      const result = await post(body);
+      const response = this.resolveKycChecks(result.data);
+      logger.info('kycCheckResponse ', result.data);
+      return response;
   }
 
-  resolveKycChecks(body: any) {
+  private resolveKycChecks(body: any) {
     const { verificationResultCode } = body;
     const kycResolver = {
       Y: {
@@ -37,6 +33,7 @@ class KycService {
       }
     };
 
+    logger.info('kycResolver ', kycResolver[verificationResultCode]);
     return kycResolver[verificationResultCode] || {};
   }
 

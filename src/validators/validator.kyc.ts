@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import HttpStatus from 'http-status-codes';
 import { BaseValidator } from './validator.base';
 import { kycSchema } from '../schema/schema.kyc';
+import { logger } from '../config/logger';
 
 
 class KycValidator {
@@ -10,6 +11,7 @@ class KycValidator {
 
    async validateKyc(req: Request, res: Response, next: NextFunction) {
      try {
+       logger.info('Incoming Request ', req.body);
        await BaseValidator.prototype.validate(req.body, kycSchema);
        next();
      } catch (e) {

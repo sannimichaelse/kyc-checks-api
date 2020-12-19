@@ -6,7 +6,6 @@ export class BaseValidator {
   constructor() {}
 
   async validate(body: object, schema: object) {
-
     return new Promise((resolve, reject) => {
       Joi.validate(body, schema)
         .then((res) => {
