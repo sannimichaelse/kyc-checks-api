@@ -8,12 +8,20 @@ class KycService {
   constructor() {
   }
 
+  /**
+   * initiateKycCheck
+   * @param {Object} body
+   */
   public async initiateKycCheck(body: object) {
       const result = await post(body);
       const response = this.resolveKycChecks(result.data);
       return response;
   }
 
+  /**
+   * resolveKycChecks
+   * @param {Object} body
+   */
   private resolveKycChecks(body: any) {
     const { verificationResultCode } = body;
     const kycResolver = {

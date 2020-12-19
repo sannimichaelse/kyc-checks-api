@@ -10,6 +10,12 @@ class KycController {
   constructor() {
   }
 
+  /**
+   * performKycChecks
+   * @param {Request} req
+   * @param {Response} res
+   * @param {NextFunction} next
+   */
   public async performKycChecks(req: Request, res: Response, next: NextFunction) {
     try {
       const result = await KycService.initiateKycCheck(req.body);

@@ -7,7 +7,6 @@ const router = express.Router();
 
 /**
  * Function contains Application routes
- *
  * @returns router
  */
 const routes = () => {
