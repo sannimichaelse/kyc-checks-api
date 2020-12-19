@@ -1,29 +1,17 @@
 import { Application, Router } from 'express';
 import * as bodyParser from 'body-parser';
-import * as morgan from 'morgan';
-import * as fs from 'fs';
-import { WriteStream } from 'fs';
-import * as path from 'path';
 import * as helmet from 'helmet';
-import * as winston from 'winston';
 import * as cors from 'cors';
 
 import { notFound } from './middlewares/middleware.error';
 import { logger } from './config/logger';
 import routes from './routes/route.index';
-
-// app.enable('trust proxy'); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc)
-
 export default class Server {
   constructor(app: Application) {
     this.config(app);
   }
 
   public config(app: Application): void {
-    // const accessLogStream: WriteStream = fs.createWriteStream(
-    //   path.join(__dirname, "./logs/access.log"),
-    //   { flags: "a" }
-    // );
 
     app.get('/', (req, res) =>
       res.status(200).json({
@@ -45,7 +33,6 @@ export default class Server {
     });
 
     app.use(cors());
-    // app.use(morgan("combined", { stream: accessLogStream }));
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(helmet());
