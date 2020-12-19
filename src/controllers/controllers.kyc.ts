@@ -21,7 +21,6 @@ class KycController {
       const result = await KycService.initiateKycCheck(req.body);
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
-       logger.trace('error', JSON.stringify(error));
        return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(ApiResponses.error(error, error.message, HttpStatus.INTERNAL_SERVER_ERROR));
     }
   }

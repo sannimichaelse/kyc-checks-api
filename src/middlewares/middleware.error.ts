@@ -8,13 +8,6 @@ import { logger } from '../config/logger';
  * @param {Object} res
  */
 export const notFound = (req: Request, res: Response) => {
-  logger.error(`
-    status - ${HttpStatus.INTERNAL_SERVER_ERROR}
-    message - Ooops, route not found
-    url - ${req.originalUrl}
-    method - ${req.method}
-    IP - ${req.ip}
-  `);
   res.status(HttpStatus.NOT_FOUND).json({
     code: HttpStatus.NOT_FOUND,
     message: 'Ooops, route not found',
