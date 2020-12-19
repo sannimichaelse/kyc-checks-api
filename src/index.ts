@@ -8,7 +8,7 @@ import * as helmet from 'helmet';
 import * as winston from 'winston';
 import * as cors from 'cors';
 
-import { genericErrorHandler, notFound } from './middlewares/middleware.error';
+import { notFound } from './middlewares/middleware.error';
 import { logger } from './config/logger';
 import routes from './routes/route.index';
 
@@ -50,7 +50,6 @@ export default class Server {
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(helmet());
     app.use(`/api/v1`, routes());
-    app.use(genericErrorHandler);
     app.use(notFound);
   }
 }

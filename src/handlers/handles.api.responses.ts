@@ -11,24 +11,6 @@
         data,
       };
     }
-
-    success(data: any, message: string, code: number) {
-      return {
-        status: 'success',
-        message,
-        code,
-        data,
-      };
-    }
-
-    ok(message: string) {
-      return {
-        status: true,
-        message,
-        code: HttpStatus.OK,
-      };
-    }
-
   }
 
   export default new ApiResponse();

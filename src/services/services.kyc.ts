@@ -1,5 +1,6 @@
 import { logger } from '../config/logger';
 import { post } from '../utils/utils.axios.instance';
+import { MSG_DOCUMENT_ERROR, MSG_SERVER_ERROR } from '../utils/utils.response.messages';
 
 
 class KycService {
@@ -10,7 +11,6 @@ class KycService {
   public async initiateKycCheck(body: object) {
       const result = await post(body);
       const response = this.resolveKycChecks(result.data);
-      logger.info('kycCheckResponse ', result.data);
       return response;
   }
 
@@ -25,15 +25,14 @@ class KycService {
       },
       D: {
         code : 'D',
-        message: 'Document Error'
+        message: MSG_DOCUMENT_ERROR
       },
       S: {
         code : 'S',
-        message: 'Server Error'
+        message: MSG_SERVER_ERROR
       }
     };
 
-    logger.info('kycResolver ', kycResolver[verificationResultCode]);
     return kycResolver[verificationResultCode] || {};
   }
 
