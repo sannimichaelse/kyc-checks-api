@@ -11,7 +11,6 @@ class KycValidator {
 
    async validateKyc(req: Request, res: Response, next: NextFunction) {
      try {
-       logger.info('Incoming Request ', req.body);
        await BaseValidator.prototype.validate(req.body, kycSchema);
        next();
      } catch (e) {

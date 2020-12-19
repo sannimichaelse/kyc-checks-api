@@ -16,7 +16,7 @@ class KycController {
       return res.status(HttpStatus.OK).json(result);
     } catch (error) {
        logger.trace('error', JSON.stringify(error));
-       return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(ApiResponses.success(error, error.message, HttpStatus.INTERNAL_SERVER_ERROR));
+       return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(ApiResponses.error(error, error.message, HttpStatus.INTERNAL_SERVER_ERROR));
     }
   }
 }

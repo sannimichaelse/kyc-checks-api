@@ -1,5 +1,3 @@
-export const MSG_NO_TOKEN_PROVIDED = 'No Token Provided';
-export const MSG_UNAUTHORIZED = 'You do not have Authorized Access';
-export const MSG_AUTHENTICATION_FAILED = 'Failed to Authenticate Token';
-export const MSG_ERROR_SAVING_USER = 'Error Saving User';
-export const MSG_USER_NOT_FOUND = 'User Not Found';
+export const MSG_INVALID_DATE_FORMAT = 'Date Format Invalid. Date must be in this format - YYYY-MM-DD';
+export const MSG_DOCUMENT_ERROR = 'Document Error';
+export const MSG_SERVER_ERROR = 'Server Error';
