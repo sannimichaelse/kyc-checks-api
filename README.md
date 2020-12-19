@@ -1,6 +1,6 @@
 ## KYC CHECKS API
 
-A simple REST API developed using node and express with typescript to perform KYC Checks using AN API
+A simple REST API developed using node and express with typescript to perform KYC Checks using An API
 
 ---
 
@@ -45,7 +45,6 @@ After installing node, this project will need yarn too, so just run the followin
 
       $ npm install -g yarn
 
----
 
 ## Install
 
@@ -74,7 +73,7 @@ create a `.env` file then add url to your db and other requirements.
 
 ## Running Tests
 
-    $ npm test - to run test
+    $ npm test 
 
 ## Assumptions
 
@@ -92,4 +91,4 @@ create a `.env` file then add url to your db and other requirements.
 ## Documentation
 
 -   [Postman Collection](https://documenter.getpostman.com/view/3064040/TVssk912)
--   [Project Manager/Issues Tracker](https://www.pivotaltracker.com/n/projects/2482261)
+-   [Project Management/Issues Tracker](https://www.pivotaltracker.com/n/projects/2482261)
