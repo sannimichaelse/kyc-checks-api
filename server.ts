@@ -12,7 +12,7 @@ const PORT = config.PORT || 3002;
 const API_URL: string = config.API_URL;
 const API_KEY_URL: string = config.API_KEY;
 
-if (!API_KEY_URL || !API_KEY_URL) {
+if (!API_KEY_URL || !API_URL) {
   console.log('Please create .env file, refer .env.sample');
   process.exit(0);
 }
