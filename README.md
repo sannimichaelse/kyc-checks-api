@@ -56,18 +56,18 @@ After installing node, this project will need yarn too, so just run the followin
 
 create a `.env` file then add url to your db and other requirements.
 
-<!---
-PORT - This is the port the application will run on. The default is 3002
--->
 -   PORT=
-<!---
-API_URL - This is the URL of the Third party API used to perform the kyc checks
--->
+```{r echo=FALSE, eval=FALSE}
+PORT - This is the port the application will run on. The default is 3002
+```
 -   API_URL=
-<!---
-API_KEY - This is the API_KEY of the Third party API used to perform the kyc checks
--->
+```{r echo=FALSE, eval=FALSE}
+API_URL - This is the URL of the Third party API used to perform the kyc checks
+```
 -   API_KEY=
+```{r echo=FALSE, eval=FALSE}
+API_KEY - This is the API_KEY of the Third party API used to perform the kyc checks
+```
 
 ## Running the project - development
 
