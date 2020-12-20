@@ -94,10 +94,10 @@ API_KEY - This is the API_KEY of the Third party API used to perform the kyc che
 
 ## Whats Left To Do
 
--   Add authentication
--   Protect the routes by authentication
+-   Add authentication using JWT
+-   Protect the routes
 -   Log application errors and messages into a file
--   Setup a database and make sure each user have an account
+-   Setup a database and make sure each user have an account before performing kyc checks
 
 
 ## Documentation
