@@ -54,7 +54,7 @@ After installing node, this project will need yarn too, so just run the followin
 
 ## Configure app
 
-create a `.env` file then add url to your db and other requirements.
+create a `.env` file then add the following values.
 
 -   PORT=
 ```{r echo=FALSE, eval=FALSE}
