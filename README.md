@@ -68,6 +68,10 @@ API_URL - This is the URL of the Third party API used to perform the kyc checks
 ```{r echo=FALSE, eval=FALSE}
 API_KEY - This is the API_KEY of the Third party API used to perform the kyc checks
 ```
+-   NODE_ENV=
+```{r echo=FALSE, eval=FALSE}
+NODE_ENV - This is the environment the application is running on. It can be one of development,test and production. The default is development
+```
 
 ## Running the project - development
 
